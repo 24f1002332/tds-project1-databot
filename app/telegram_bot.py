@@ -44,10 +44,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         response = ask_gemini(history, log_url)
 
     except Exception as e:
-        response = {
-            "answer": "internal error",
-            "log_url": log_url,
-        }
+        raise
 
     history.append(
         {
